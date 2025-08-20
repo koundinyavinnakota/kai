@@ -1,0 +1,11 @@
+services:
+  jarvis-server:
+    build: ./server
+    image: jarvis-server:local
+    ports:
+      - "8000:8000"
+    environment:
+      # Talk to Ollama on your Mac
+      OLLAMA_URL: http://host.docker.internal:11434
+      OLLAMA_MODEL: llama3.1
+    restart: unless-stopped
