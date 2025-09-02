@@ -10,9 +10,9 @@ import requests
 import sounddevice as sd
 from faster_whisper import WhisperModel
 
-import pvporcupine  # wake-word
-
-# ================= Settings =================
+# ===== Settings =====
+SAMPLE_RATE = 16000
+BLOCK_SECONDS = 5
 SERVER_URL = os.getenv("KAI_SERVER_URL", "http://localhost:8000/chat")
 
 # Text-to-Speech (macOS 'say')
