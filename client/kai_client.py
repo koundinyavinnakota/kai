@@ -12,6 +12,13 @@ from faster_whisper import WhisperModel
 
 import pvporcupine  # wake-word
 
+DEFAULT_WAKEWORD_FILE = os.path.join(
+    os.path.dirname(__file__), "..", "assets", "wakewords", "jarvis_en_mac_v3_0_0.ppn"
+)
+
+KAI_WAKEWORD_FILE = os.getenv("KAI_WAKEWORD_FILE", DEFAULT_WAKEWORD_FILE)
+
+
 # ================= Settings =================
 SERVER_URL = os.getenv("KAI_SERVER_URL", "http://localhost:8000/chat")
 
